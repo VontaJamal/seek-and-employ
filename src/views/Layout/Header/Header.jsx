@@ -1,6 +1,7 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/seekandemploy.png'
+import { useResults } from '../../../context/SearchContext'
 
 const Header = () => {
   return (

@@ -1,8 +1,4 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
-import { useResults } from '../../context/SearchContext'
 import { useDevSearchResults } from '../../hooks/useDevSearchResults'
-import { fetchDevs } from '../../services/github'
 import Dev from '../Dev/Dev'
 
 export default function DevList() {
@@ -11,9 +7,9 @@ export default function DevList() {
   } = useDevSearchResults()
 
   return (
-    <div className="w-full">
-      <ul className="flex">
-        {devList.map((dev) => {
+    <div className="container mt-4 mx-auto">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {devList?.map((dev) => {
           return (
             <li key={dev.id}>
               <Dev dev={dev} />
