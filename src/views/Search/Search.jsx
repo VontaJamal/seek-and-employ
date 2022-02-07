@@ -7,13 +7,16 @@ export default function Search() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('clicked me!')
+
+    if (!search) return
+    history.push(`/devs?${search}`)
+    setSearch('')
   }
 
   return (
     <form className="text-4xl" onSubmit={handleSubmit}>
       <fieldset className="border-2 p-7">
-        <legend className="text-center">Search for github users!</legend>
+        <legend className="text-center">Search for github devs!</legend>
         <label>
           Search User:
           <input
