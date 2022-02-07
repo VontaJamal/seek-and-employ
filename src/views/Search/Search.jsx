@@ -1,16 +1,21 @@
+import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { useSearch } from '../../context/SearchContext'
+import { useResults, useSearch } from '../../context/SearchContext'
 
 export default function Search() {
   const { search, setSearch } = useSearch()
+  const [searchTerm, setSearchTerm] = useState('')
+  const { setResults } = useResults()
   const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (!search) return
-    history.push(`/devs?devs=${search}`)
-    setSearch('')
+    if (!searchTerm) return
+    setResults({})
+    setSearch(searchTerm)
+    history.push(`/devs?devs=${searchTerm}`)
+    setSearchTerm('')
   }
 
   return (
@@ -21,8 +26,8 @@ export default function Search() {
           Search User:
           <input
             className="border-8"
-            value={search}
-            onChange={(e) => setSearch(() => e.target.value)}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(() => e.target.value)}
             placeholder="name..."
             // eslint-disable-next-line
             autoFocus
