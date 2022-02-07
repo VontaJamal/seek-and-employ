@@ -17,7 +17,7 @@ test('The Search component renders correctly', () => {
     name: /search/i,
   })
 
-  const legendText = screen.getByText(/search for github users!/i)
+  const legendText = screen.getByText(/search for github devs!/i)
 
   expect(searchInput).toBeInTheDocument()
   expect(searchInput).toHaveFocus()
