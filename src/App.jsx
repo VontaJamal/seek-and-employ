@@ -1,13 +1,12 @@
-import logo from './logo.svg'
 import './App.css'
+import Layout from './views/Layout/Layout'
+import Search from './views/Search/Search'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <Layout>
+      <Search />
+    </Layout>
   )
 }
 
