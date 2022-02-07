@@ -9,7 +9,7 @@ export default function Search() {
     e.preventDefault()
 
     if (!search) return
-    history.push(`/devs?${search}`)
+    history.push(`/devs?devs=${search}`)
     setSearch('')
   }
 

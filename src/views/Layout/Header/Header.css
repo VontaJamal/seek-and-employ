@@ -5,7 +5,6 @@ header {
   width: 100%;
   background: var(--grey);
   box-shadow: var(--shadow-elevation-medium);
-  position: fixed;
 }
 
 header p {
