@@ -11,3 +11,4 @@ jobs:
       - run: npm test
         env:
           CI: true
+          REACT_APP_GITHUB_API_URL: ${{ secrets.REACT_APP_GITHUB_API_URL }}
