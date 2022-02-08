@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useResults, useSearch } from '../../context/SearchContext'
 
 export default function Search() {
-  const { search, setSearch } = useSearch()
+  const { setSearch } = useSearch()
   const [searchTerm, setSearchTerm] = useState('')
   const { setResults } = useResults()
   const history = useHistory()
@@ -36,7 +36,9 @@ export default function Search() {
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               id="search"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(() => e.target.value)}
+              onChange={(e) => {
+                setSearchTerm(e.target.value)
+              }}
               placeholder="name..."
               // eslint-disable-next-line
               autoFocus

@@ -10,7 +10,7 @@ test('The Search component renders correctly', () => {
   )
 
   const searchInput = screen.getByRole('textbox', {
-    name: /search user:/i,
+    name: /search/i,
   })
 
   const searchButton = screen.getByRole('button', {
