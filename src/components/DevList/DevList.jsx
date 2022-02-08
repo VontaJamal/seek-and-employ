@@ -15,7 +15,10 @@ export default function DevList({ devList = [] }) {
 
   return (
     <div className="container mt-4 mx-auto">
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <ul
+        aria-label="devList"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
         {devDetails?.map((dev) => {
           return (
             <li key={dev.id}>
